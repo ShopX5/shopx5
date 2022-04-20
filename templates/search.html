@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <title>Search</title>
+  </head>
+  <body style="width: 100%; height: 100%;">
+    <form class="search_form" method="post">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="/" style="margin-right: 50px; color: rgb(0, 255, 25)"><h3>Shop X</h3></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+              <ul class="navbar-nav mr-auto">
+                <div class="form-group" style="margin-right: 30px;"><label style="color: rgb(255, 255, 255); font-weight: 500; text-align: center;">Выберите критерий</label><select class="form-control" name="ord"><option value={{vals[0]}}>{{vals[0]}}</option><option value="Сначала_новые">Сначала новые</option><option value="Сначала_старые">Сначала старые</option><option value="Цена_▼">Цена ▼</option><option value="Цена_▲">Цена ▲</option></select></div>
+                <div class="custom-control custom-checkbox" style="margin-top: 15px; display: inline; height: 60px; width: 85px; margin-right: 30px;">
+                    {% if vals[1] == 'on' %}
+                        <input type="checkbox" name="fast" class="custom-control-input" id="fast" checked="">
+                        <label class="custom-control-label" for="fast" style="color: rgb(255, 255, 255); display: inline;">Быстрая<br>доставка</label>
+                    {% else %}
+                        <input type="checkbox" name="fast" class="custom-control-input" id="fast1">
+                        <label class="custom-control-label" for="fast1" style="color: rgb(255, 255, 255); display: inline;">Быстрая<br>доставка</label>
+                    {% endif %}
+              </div>
+                  <div class="custom-control custom-checkbox" style="margin-top: 15px; display: inline; height: 60px; width: 85px;">
+                    {% if vals[2] == 'on' %}
+                        <input type="checkbox" name="free" class="custom-control-input" id="free" checked="">
+                        <label class="custom-control-label" for="free" style="color: rgb(255, 255, 255); display: inline;">Бесплатная<br>доставка</label>
+                    {% else %}
+                        <input type="checkbox" name="free" class="custom-control-input" id="free1">
+                        <label class="custom-control-label" for="free1" style="color: rgb(255, 255, 255); display: inline;">Бесплатная<br>доставка</label>
+                    {% endif %}
+              </div>
+              </ul>
+                <input class="form-control" name="text" type="text" placeholder="Товар" style="width: 35%; max-width: 35%" value={{vals[3]}}>
+                <button class="btn btn-primary" type="submit" style="background-color: rgb(10, 255, 22);">Найти</button>
+          </nav>
+    </form>
+    {% if data[0][0] == "Товаров не найдено" %}
+    <div class="container" style="width: 100%; height: 180px; text-align: center; float: centre; margin-top: 20%;"><h3>{{data[0][0]}}</h3></div>
+    {% else %}
+                  {% for col in data %}
+    <div class="container" style="width: 160px; height: 180px; text-align: left; float: left; margin-top: 10px;"><a href="/item/{{col[0]}}"><img src={{col[1]}} height="140" width="140" alt={{col[0]}}></a><button type="submit" class="btn btn-light" style="float: none; left: auto; right: auto; text-align: center; color: rgb(0, 255, 26);"><h6>{{col[0]}}</h6></button><h6 style="display: inline; float: right; color: rgb(0, 95, 190); margin-top: 8px;">{{col[2]}}</h6><div class="m-5"> </div></div>
+                  {% endfor %}
+    {% endif %}
+        </div>
+</body>
+</html> 

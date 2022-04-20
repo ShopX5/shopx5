@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <title>Bootstrap</title>
+  </head>
+  <body style="height: 100%; width: 100%; background-color: rgb(240, 240, 240);">
+  <div class="container" style="background-color: rgb(224, 224, 224); width: 60%; height: 80%; margin-top: 8%; margin-left: 20%; margin-right: 20%;">
+      <h1 style="width: 54%; float: right; height: 10%; text-align: left; margin-top: 10%;">{{i.title}}<br>Seller: {{i.seller}}<br>Cost: {{i.cost}}</h1>
+      <img src={{i.img}} style="width: 40%; height: 40%; display: block;">
+      <div class="m-5"> </div>
+      <button type="button" class="btn btn-outline-warning" onclick="history.back(-1)" style="margin-right: 35%;">Назад</button>
+      <a href="/buy/{{name}}"><button type="button" class="btn btn-outline-success" style="">Купить</button></a>
+      <a href="/cart/{{name}}"><button type="button" class="btn btn-outline-info" style="float: right;">В корзину</button></a>
+  </div>
+</body>
+</html>

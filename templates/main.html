@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <title>Shop X</title>
+  </head>
+  <body style="width: 100%; height: 100%;">
+    <div class="container" style="width: 100%; height: 100%">
+      <div class="header clearfix" style="display: block; position: relative; width: 100%; height: 10%;">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+            </li>
+            <li class="nav-item">
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+        </nav>
+        <h3 class="nav-link" style="float: left; position: static; text-decoration-line: none; color: rgb(9, 255, 0); background-color: rgb(255, 255, 255); display: inline;">Shop X</h3>
+      <div class="form-group" style=""></div>
+          {% if nam == "%name" %}
+              <div class="container" style=""></div><div class="header clearfix" style="float: right; line-height: 10px; display: inline;"><a class="nav-link active" href="login" style="float: right; text-align: right">Sign in</a><a class="nav-link" href="register" style="float: right; text-align: center; height: 24px; padding-right: 14px; padding-top: 8px; padding-bottom: 8px; display: block; position: static; width: 100px;">Sign up</a> </div>
+          {% else %}
+              <div class="container" style="height: 60px; width: 150px; float: right;">
+        <p><a href="/cart"><img src="https://img.icons8.com/pastel-glyph/344/shopping-trolley--v2.png" width="50" height="50" alt="Cart" style="margin-right: 15px;"></a>
+        <a href="/profile"><img src="https://www.thesports.physio/wp-content/uploads/2019/10/cropped-istockphoto-903053114-612x612.jpg" width="50" height="50" alt="Profile"></a></p></div>
+              </div>
+          {% endif %}
+      </div>
+<div class="container" style="text-align: left;">
+    <div class="m-5" style="width: 100%; float: left; height: 15%;"><form class="form-group" method="post" style="display: block; width: 100%; height: 18%;">
+        <input class="form-control" type="text" name="sear" placeholder="Search" aria-label="Search" style="width: 92%;  display: inline;"><button type="submit" class="btn btn-outline-success" style="float: right; display: inline;">Поиск</button>
+    </form>
+    </div>
+</div>
+    <div class="header clearfix" style="display: block; width: 100%; height: 26%;"></div>
+    <div class="header clearfix" style="display: block; width: 100%; height: 20%; text-decoration-style: solid;"><h1 style="text-align: center; border-color: rgb(255, 255, 255); text-decoration-color: rgb(0, 128, 255); color: rgb(5, 255, 55); width: 100%; height: 4%;">Новинки</h1> <hr style="">
+            <div class="container" style="width: 100%; height: 16%; float: left; max-width: 100%;">
+                {% for col in data1 %}
+                    <div class="container" style="width: 8%; height: 6%; text-align: left; float: left;">
+                        <a href="/search/Сначала_новые&off&off&"><img src="{{col[1]}}" height="80" width="80" alt=""></a>
+                        <button type="button" class="btn btn-light" style="text-align: center; color: rgb(0, 255, 26);"><h6>{{col[0]}}</h6></button>
+                        <div class="m-5"> </div></div>
+                {% endfor %}
+            </div>
+    <div class="header clearfix" style="display: block; width: 100%; height: 30%; text-decoration-style: solid;"><h1 style="text-align: center; border-color: rgb(255, 255, 255); text-decoration-color: rgb(0, 128, 255); color: rgb(5, 255, 55); width: 100%; height: 4%;">Низкая цена</h1> <hr style="">
+        <div class="container" style="width: 100%; height: 16%; float: left; max-width: 100%;">
+                {% for col in data2 %}
+                    <div class="container" style="width: 8%; height: 6%; text-align: left; float: left;">
+                        <a href="/search/Цена_▲&off&off&"><img src="{{col[1]}}" height="80" width="80" alt=""></a>
+                        <button type="button" class="btn btn-light" style="text-align: center; color: rgb(0, 255, 26);"><h6>{{col[0]}}</h6></button>
+                        <div class="m-5"> </div></div>
+                {% endfor %}
+            <div class="m-5"> </div></div></div><p style="margin-top: 0%; margin-left: 0px; width: 100%;">©Eugene And Nick's Co.</p></div></body>
+</html>

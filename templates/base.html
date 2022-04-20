@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{title}}</title>
+</head>
+  <body style="height: 100%; width: 100%;">
+  <div class="container-fluid" style="display: block; width: 100%; height: 50px; text-align: left; float: left;" contenteditable="false"><h1 style="color: rgb(0, 255, 13);">{{head}}</h1></div>
+  {% for col in data %}
+  <div class="container" style="width: 220px; height: 240px; text-align: left; float: left;"><a href="/uns/{{col[0]}}"><img src={{col[1]}} height="200" width="200" alt=""><button type="button" class="btn btn-link" style="float: none; left: auto; right: auto; text-align: center; color: rgb(0, 255, 26);"><h4>{{col[0]}}</h4></button><h4 style="display: inline; float: right; color: rgb(0, 95, 190); margin-top: 8px;">{{col[2]}}</h4><div class="m-5"> </div></a></div>
+  {% endfor %}
+</body>
+</html>
