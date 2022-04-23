@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, redirect, session
 from data import db_session
 from data.users import User
 from data.items import Item
+import os
 
 
 app = Flask(__name__)
