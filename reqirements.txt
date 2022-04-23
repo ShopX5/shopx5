@@ -2,3 +2,4 @@ flask
 datatime
 webbrowser
 requests
+os
