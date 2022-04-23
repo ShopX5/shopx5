@@ -1,0 +1,4 @@
+flask
+datatime
+webbrowser
+requests
